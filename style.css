@@ -1,0 +1,311 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+--Neutral-0: hsl(0, 0%, 100%);
+--Neutral-300: hsl(252, 6%, 83%);
+--Neutral-500: hsl(245, 15%, 58%);
+--Neutral-700: hsl(245, 19%, 35%);
+--Neutral-900: hsl(248, 70%, 10%);
+
+--Orange-500: hsl(7, 88%, 67%);
+--Orange-700: hsl(7, 71%, 60%);
+
+--Graident-txt-start:hsl(7, 86%, 67%);
+--Graident-txt-end:hsl(0, 0%, 100%);
+}
+
+body{
+    background-color: var(--Neutral-900);
+    color: var(--Neutral-0);
+    min-height: 100vh;
+    overflow-y: auto;
+    font-family: 'Inconsolata' , "sans-serif";
+}
+
+.image-container{
+    background: url(assets/images/background-desktop.png) no-repeat center
+    center / cover;
+    width: 100%;
+    min-height:100vh;
+    overflow-y: hidden;
+    position: relative;
+    display: grid;
+    place-content: center;
+}
+
+.svg-image{
+    position: absolute;
+}
+
+.svg-image:nth-child(1){
+    width: 100%;
+}
+
+.svg-image:nth-child(2){
+    top: 70px;
+    right: 0;
+}
+
+.svg-image:nth-child(3){
+    bottom: 0;
+    left: 0;
+}
+.svg-image:nth-child(4){
+    top: -100px;
+    left: 89px;
+}
+.svg-image:nth-child(5){
+    top: 46%;
+    right: 270px;
+}
+
+.form-content{
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+    padding: 2rem 1rem;
+}
+
+.form-content .hide{
+    display: none;
+}
+
+.form-content .logo{
+   transform: translateX(115%);
+   margin-bottom: 2rem;
+}
+.headings{
+    text-align: center;
+}
+.headings h1{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+.headings p{
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.gradient-txt{
+    background: var(--Graident-txt-start);
+    background: linear-gradient(to right, --Graident-txt-start 10%, --Graident-txt-end 100% );
+    --webkit-background-color: text;
+    --webkit-text-fill-color:transparent;
+}
+.header-email{
+    color: var(--Orange-500);
+}
+.form-item .upload-box input{
+    width: 100%;
+}
+
+.form-item{
+    margin-bottom: 1.5rem;
+    transform: translateX(100px);
+}
+.form-item label{
+    margin-bottom: 0.5rem;
+    display: block;
+}
+.form-item input{
+    background-color: var(--Neutral-900);
+    width: 80%;
+    backdrop-filter: blur(2px) saturate(100%);
+    padding: 1rem .5rem;
+    border: 1px solid var(--Neutral-300);
+    border-radius: .5rem;
+    background: transparent;
+    color: var(--Neutral-0);
+    display: block;
+    transition: all 200ms ease-in;
+}
+.form-item input:hover{
+    background-color: hsl(245, 15%, 58%,0.6);;
+}
+.form-item input.error{
+    border: 1px solid var(--Orange-500);
+}
+.form-item .upload-hint{
+    color: var(--Neutral-300);
+    font-size: .9rem;
+    display: flex;
+    gap: .5rem;
+}
+.form-item .upload-hint svg{
+    transform: translateY(-0.1rem);
+}
+.form-item .upload-hint.error{
+    color: var(--Orange-500);
+}
+.form-item .text-hint{
+    color: var(--Neutral-300);
+    font-size: 1rem;
+    gap: .5rem;
+    display: none;
+}
+svg{
+    transform: translateY(.3rem);
+}
+
+.form-item .text-hint.error{
+    color: var(--Orange-700);
+    display: flex;
+}
+
+.form-item .upload-box{
+    width: 80%;
+    cursor: pointer;
+    background-color:hsl(248, 70%, 10%, 0.2);
+    color: var(--Neutral-300);
+    backdrop-filter: blur(2px) saturate(100%);
+    display: flex;
+    flex-direction: column;
+    outline: 2px dashed var(--Neutral-500);
+    padding: 1rem;
+    align-items: center;
+    border-radius: .55rem;
+    margin-bottom: 1rem;
+    transition: all 200ms ease  ;
+}
+.form-item .upload-box:hover{
+    background-color: hsl(245, 15%, 58%, 0.6);
+}
+.form-item .upload-box .file-input{
+    display: none;
+}
+.form-item .upload-box .uploaded-image{
+    background-color: var(--Neutral-700);
+    width: 50px;
+    height: 50px;
+    padding: 0.35rem;
+    border-radius: 1rem;
+    outline: 1px solid var(--Neutral-500);
+    margin-bottom: .5rem;
+    display: grid;
+    place-content: center;
+}
+.form-item .upload-box .uploaded-image img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    
+}
+.form-item .upload-box .message-action.hide{
+    display: none;
+}
+.form-item .upload-box .file-actions button{
+    background-color: hsl(245, 15%, 58%, 0.6);
+    cursor: pointer;
+    color: var(--Neutral-300);
+    padding: .35rem;
+    border-radius: .25rem;
+    border: 0;
+}
+.form-item .upload-box .file-actions{
+    display: none;
+}
+.form-item .upload-box .file-actions.shows{
+    display: block;
+}
+form .generate-ticket{
+    cursor: pointer;
+    background-color: var(--Orange-500);
+    padding: 1rem;
+    width: 80%;
+    font-size: 1.15rem;
+    font-weight:700 ;
+    border-radius:0.75rem ;
+    transform: translateX(100px);
+    border: 0;
+    transition: all 200ms ease;
+}
+form .generate-ticket:hover{
+    background-color:var(--Orange-700);
+}
+
+.form-content.hide{
+    display: none;
+}
+/* display data */
+
+.display-data{
+    width: 90%;
+    max-width: 800px;
+    padding: 1rem;
+    margin: auto;
+    position: relative;
+}
+.display-data .logos{
+   transform: translate(115% , -180%);
+}
+.display-data .headings{
+    margin-bottom: 6rem;
+}
+.display-data .headings p{
+    padding: 0 7.5rem;
+}
+.display-data .ticket-container {
+    background: url("assets/images/pattern-ticket.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    aspect-ratio: 16/9;
+    max-width: 500px;
+    padding: 1rem;
+    position: relative;
+    border-radius: .5rem;
+    transform: translateX(20%);
+}
+.ticket-container .logo{
+    margin-top: .3rem;
+    margin-left: .3rem;
+}
+.ticket-user{
+    display: flex;
+    margin-top: 4rem;
+    align-items: center;
+    gap: .5rem;
+}
+.ticket-container .ticket-user img{
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 1rem;
+}
+.ticket-container .ticket-user #display-name{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.ticket-container .ticket-user .github-username{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-top: .55rem;
+}
+.ticket-container .ticket-user .github-username img{
+    width: 20px;
+}
+.ticket-container .user-info{
+    margin-left: .55rem;
+}
+.ticket-container .ticket-number{
+    position: absolute;
+    right: 5px;
+    top: 36%;
+    transform: rotate(90deg);
+    font-size: 2rem;
+    color: var(--Neutral-300);
+}
+.display-data .headings .text-gradient{
+    background: linear-gradient(to right, var(--Graident-txt-start) , var(--Graident-txt-end));
+
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.display-data .headings .header-email{
+    color: var(--Graident-txt-start);
+}
